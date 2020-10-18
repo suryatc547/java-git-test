@@ -13,14 +13,8 @@ public class Employee {
 	private static final Connection con = getCon.connection();
 	public void register(String name,String email,String password) {
 		try {
-//			Class.forName("com.mysql.jdbc.Driver");
-//			DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-//			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jbase","pma","Surya@2020");
-//			Statement st = con.createStatement();
-//			int res = st.executeUpdate("INSERT INTO users(name,email,password) VALUES('"+name+"','"+email+"','"+password+"')");
-//			System.out.println("registered");
 			int res = QueryBuilder.createData("INSERT INTO users(name,email,password) VALUES('"+name+"','"+email+"','"+password+"')");
-//			System.out.println("registered");
+			System.out.println("registered");
 			System.out.println(res);
 		} catch(Exception e) {
 			System.out.println("Register exception");
